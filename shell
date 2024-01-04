@@ -1,0 +1,14 @@
+>>let 
+>>>moz_overlay = import >>
+>>builtins.fetch.Tarb_all
+("https://github.com
+/mozilla/nixpkgs-mozilla/archive
+/master.tar.gz");nixpkgs =
+import<nixpkgs>{ "overlays=[moz_overlay];};in with nixpkgs;stdenv.mk
+Derivation {name = "ord_shell; 
+buildInputs=[just nixpkgs
+.latest
+.rustChannels.stable
+.rust openssl 
+pkg-config];
+ _}
